@@ -2,10 +2,13 @@ function nxn (num) {
     let res = []
     
     for (let i = 0; i < num; i++) {
-        res.push(num)
+        let output = ""
+        for (let k = 0; k < num; k++) {
+            output += `${num} `
+        }
+        res.push(output)
     } 
-    for (let x = 0; x < num; x++) {
-        console.log(res.join(" "));
-    }
+    console.log(res.join("\n"));
+    
 }
 nxn (3)

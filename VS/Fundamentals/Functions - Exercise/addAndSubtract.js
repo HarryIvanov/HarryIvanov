@@ -8,8 +8,8 @@ function main (first, second, third) {
     function sum (first, second) {
         return first + second;
     }
-    function substract (sumFirstAndSecond, third) {
-        return sumFirstAndSecond - third
+    function substract (sumFirstAndSecond, num) {
+        return sumFirstAndSecond - num
     }
     console.log(finalResult);
 }

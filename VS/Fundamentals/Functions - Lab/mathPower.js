@@ -1,9 +1,6 @@
 function mathPower (value, power) {
-    let res = 1;
-
-    for (let i = 0; i < power; i++) {
-        res = res * value
-    }
-    console.log(res);
+    let res = value ** power
+        return res;
 }
-mathPower (2, 8)
+let returnedValue = mathPower (2, 8)
+console.log(returnedValue);
