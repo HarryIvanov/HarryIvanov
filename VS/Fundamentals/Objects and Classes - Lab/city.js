@@ -1,5 +1,8 @@
 function city (cityInfo) {
-    for (let key of Object.keys(cityInfo)) {
+    
+    let props = Object.keys(cityInfo)
+    
+    for (let key of props) {
         console.log(`${key} -> ${cityInfo[key]}`);
     }
 }

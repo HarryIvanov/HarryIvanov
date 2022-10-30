@@ -19,3 +19,6 @@ console.log(filtered2); // връща всички елементи, които 
 
 // не променя основния масив. Всичко отива в променливи или нов масив!!!!
 
+myArr.forEach(element => {
+    console.log(element);
+});

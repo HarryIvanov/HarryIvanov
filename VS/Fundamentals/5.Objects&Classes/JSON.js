@@ -6,7 +6,7 @@ function solve (data) {
     let stringify = JSON.stringify(data)
     console.log(stringify); //връща стринг. Не можем да достъпваме keys etc. 
     let parse = JSON.parse(stringify)
-    console.log(parse); //Връща като го обратно в обект. Можем да го достъпваме.
+    console.log(parse); //Връща като го обратно в обект. Можем да го достъпваме. Ползваме го, когато видим кавички пред пред и след обекта '{name: dd, age, DD}'
 
     
 
@@ -19,7 +19,7 @@ function solve (data) {
 
 }
 solve ({
-    "name": "Ivan",
+    "name": "Ivan", // Винаги трябва да добавяме двойни кавички, ако ще парсваме към JSON.
     "age": 25,
     "grades": {
         "Math": [2.50, 4.50], // можем да имаме обект в обекта

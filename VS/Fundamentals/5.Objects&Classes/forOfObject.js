@@ -4,3 +4,7 @@ for (let key of Object.keys(myObj)) {
     console.log(`${key}: ${myObj[key]}`);
     
 }
+for (const key in myObj) {
+    console.log(key, myObj[key]);
+}
+

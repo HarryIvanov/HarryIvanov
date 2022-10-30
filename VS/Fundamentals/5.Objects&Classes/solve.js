@@ -16,5 +16,10 @@ console.log(Object.entries(myObj)); // връща масиви. Всеки ма�
 
 // myObj.hasOwnProperty("name") = същото като includes, но за обекти.
 
+// delete myOjb.name = трие съответното пропърти
+
+
+
+
 }
 solve ()
