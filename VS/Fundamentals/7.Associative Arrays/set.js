@@ -7,3 +7,5 @@ console.log(set.has(6));  //Връща true/false
     for (const el of set) {
         console.log(el);
     }
+    let line = new Set (["Sofia", 200])
+    console.log(line);
