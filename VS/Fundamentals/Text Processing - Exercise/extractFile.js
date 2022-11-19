@@ -1,14 +1,13 @@
 function extractFile (str) {
-    let newStr = str.split("\\")
-    for (const el of newStr) {
-        if(el.includes(".")) {
-        let index = el.lastIndexOf(".")
-        let finalEl = el.substring(0,index)
-        let fileType = el.substring(index+1,el.length);
-        console.log(`File name: ${finalEl}`);
-        console.log(`File extension: ${fileType}`);
+    let fileName = str.split("\\").pop()
+    
+    let index = fileName.lastIndexOf(".")
+    let finalEl = fileName.substring(0,index)
+    let fileType = fileName.substring(index+1);
+    
+    console.log(`File extension: ${fileType}`);
+    console.log(`File name: ${finalEl}`);
 
-    }
+    
 }
-}
-extractFile ('C:\\Internal\\training-internal\\Template.bak.pptx')
+extractFile ('C:\\Internal\\training-internal\\Template.pptx')

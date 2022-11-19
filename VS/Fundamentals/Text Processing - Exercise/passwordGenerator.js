@@ -15,7 +15,9 @@ function passwordGenerator (array) {
             counter = 0;
         }
     }
-rawPass = rawPass.split("").reverse().join("")
+    rawPass = rawPass.split("")
+    .reverse()
+    .join("")
 console.log(`Your generated password is ${rawPass}`); 
 
     
