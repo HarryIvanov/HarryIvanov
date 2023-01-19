@@ -1,0 +1,39 @@
+body {
+    font-family: sans-serif;
+}
+
+nav {
+    background-color: #234465;
+
+}
+
+nav li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px 20px;
+    
+}
+nav li {
+    display: inline-block;
+}
+
+nav ul {
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+}
+p {
+    font-style: italic;
+}
+footer {
+    background-color: #234465;
+    color: white;
+    text-align: center;
+    font-family: sans-serif;
+    font-style: italic;
+}
+#topmenu:hover {
+    background-color: aqua;
+    font-weight: bold;
+}

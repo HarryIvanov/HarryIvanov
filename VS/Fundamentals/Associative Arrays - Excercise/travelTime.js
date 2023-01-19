@@ -1,54 +1,56 @@
-function solve(input) {
-  let destination = generateDestination(input);
+function solveTravelTime(input) {
+  let destinations = {};
 
-  function generateDestination(arr) {
-    let obj = {};
+  for (let i = 0; i < input.length; i++) {
+      let [country, town, price] = input[i].split(" > ").filter(e => e !== "");
+      price = +price;
+      town = town[0].toUpperCase() + town.slice(1);
 
-    arr.forEach((line) => {
-      let tokens = line.split(" > ");
-      let [country, city, price] = tokens;
-
-      if (!obj.hasOwnProperty(country)) {
-        obj[country] = {};
+      if (!destinations.hasOwnProperty(country)) {
+          destinations[country] = {};
       }
-
-      if (!obj[country].hasOwnProperty(city)) {
-        obj[country][city] = price;
+      if (!destinations[country].hasOwnProperty(town)) {
+          destinations[country][town] = price;
       }
-
-      let oldPrice = obj[country][city];
-
-      if (oldPrice > price) {
-        obj[country][city] = price;
+      let prevPrice = destinations[country][town];
+      if (prevPrice > price) {
+          destinations[country][town] = price;
       }
-    });
-    return obj;
   }
 
-  let sorted = Object.keys(destination).sort((a, b) => a.localeCompare(b));
-
-  for (const country of sorted) {
-    console.log(`${country} -> ${cityPrice(destination[country])}`);
+  let orderedCountries = [...Object.keys(destinations)].sort((a,b) => a.localeCompare(b));
+  let result = "";
+  for (let country of orderedCountries) {
+      result += country + " -> ";
+      let sortedPrices = [...Object.keys(destinations[country])].sort((a, b) => travelCost(a, b, destinations, country));
+      for (let town of sortedPrices) {
+          result += `${town} -> ${destinations[country][town]} `;
+      }
+      result += "\n";
   }
+  console.log(result);
 
-  function cityPrice(obj) {
-    let result = [];
-    for (const key of Object.keys(obj)) {
-      // result += `${key} -> ${obj[key]}`
-      result.push(`${key} -> ${obj[key]}`);
-    }
-    return result.join(" ");
+  function travelCost(town1, town2, destination, country) {
+      let priceOne = destination[country][town1];
+      let priceTwo = destination[country][town2];
+
+      return priceOne - priceTwo
   }
 }
 
-solve([
-  "Bulgaria > Sofia > 500",
+solveTravelTime(
+  [
+    'Bulgaria > Sofia > 25000',
+    'Bulgaria > Sofia > 25000',
+    'Kalimdor > Orgrimar > 25000',
+    'Albania > Tirana > 25000',
+    'Bulgaria > Varna > 25010',
+    'Bulgaria > Lukovit > 10'
+    ]
+    
 
-  "Bulgaria > Sopot > 50",
+       
 
-  "France > Paris > 2000",
+)
 
-  "Albania > Tirana > 1000",
 
-  "Bulgaria > Sofia > 200",
-]);
