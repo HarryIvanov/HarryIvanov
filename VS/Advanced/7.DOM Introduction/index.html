@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo</title>
+</head>
+<body>
+    <h1>Document Object Model Demo</h1>
+    <ul>
+        <li>Hello Properties</li>
+        <ol><li>Hello</li>
+        <li><button onclick="alert('NO!')">Don't Click!</button></li>
+        
+        </ol>
+        
+    </ul>
+    <script>
+        function edit(ref, match, replacer) {
+            const text = ref.textContent;
+            const result = text.replace(match, replacer);
+
+            ref.textContent = result;
+        }
+    </script>
+    <footer>This is buged!</footer>
+</body>
+</html>
