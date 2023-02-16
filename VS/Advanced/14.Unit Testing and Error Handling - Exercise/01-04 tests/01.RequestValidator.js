@@ -50,11 +50,14 @@ function solve (input) {
         } 
     }
     if (isOk) {
-        return input 
+        console.log(input);  
     }
 }
 solve ({
-    method: 'POST',
-    uri: 'home.bash',
-    message: 'rm -rf /*'
-}) ;
+    method: 'OPTIONS',
+    uri: 'git.master',
+    version: 'HTTP/1.1',
+    message: '-recursive'
+  }
+  
+  ) ;
